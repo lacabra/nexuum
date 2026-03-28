@@ -1,0 +1,171 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 150 10% 98%;
+    --foreground: 200 50% 10%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 200 50% 10%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 200 50% 10%;
+
+    --primary: 168 55% 30%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 150 10% 95%;
+    --secondary-foreground: 200 50% 15%;
+
+    --muted: 150 8% 93%;
+    --muted-foreground: 200 15% 45%;
+
+    --accent: 170 100% 39%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 150 12% 90%;
+    --input: 150 12% 90%;
+    --ring: 168 55% 30%;
+
+    --radius: 0.5rem;
+
+    --section-alt: 150 10% 96%;
+    --teal-glow: 170 100% 39%;
+    --navy: 200 55% 10%;
+    --navy-foreground: 150 15% 92%;
+    --electric-teal: 170 100% 39%;
+  }
+
+  .dark {
+    --background: 200 55% 7%;
+    --foreground: 150 15% 92%;
+
+    --card: 200 50% 10%;
+    --card-foreground: 150 15% 92%;
+
+    --popover: 200 50% 10%;
+    --popover-foreground: 150 15% 92%;
+
+    --primary: 168 55% 30%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 200 30% 14%;
+    --secondary-foreground: 150 15% 90%;
+
+    --muted: 200 30% 14%;
+    --muted-foreground: 150 10% 55%;
+
+    --accent: 170 100% 39%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 200 30% 16%;
+    --input: 200 30% 16%;
+    --ring: 168 55% 30%;
+
+    --section-alt: 200 50% 9%;
+    --teal-glow: 170 100% 15%;
+    --navy: 200 55% 7%;
+    --navy-foreground: 150 15% 92%;
+    --electric-teal: 170 100% 39%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  }
+}
+
+@layer utilities {
+  .section-padding {
+    @apply py-24 md:py-32 px-6 md:px-12 lg:px-20;
+  }
+
+  .section-alt {
+    background-color: hsl(var(--section-alt));
+  }
+
+  .section-navy {
+    background-color: hsl(var(--navy));
+    color: hsl(var(--navy-foreground));
+  }
+
+  .fade-in-up {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+  }
+
+  .fade-in-up.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .highlight-band {
+    position: relative;
+    display: inline;
+    background: linear-gradient(135deg, hsl(170 100% 39% / 0.15), hsl(160 60% 45% / 0.1));
+    padding: 0.05em 0.15em;
+    border-radius: 0.15em;
+  }
+
+  .gradient-text {
+    background: linear-gradient(135deg, hsl(170 100% 39%), hsl(160 55% 40%), hsl(90 45% 55%));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .card-elevated {
+    @apply rounded-xl border border-border bg-card shadow-sm;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  }
+
+  .card-elevated:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 40px -12px hsl(170 100% 39% / 0.15);
+    border-color: hsl(var(--electric-teal) / 0.3);
+  }
+
+  .card-top-accent {
+    border-top: 2px solid transparent;
+    border-image: linear-gradient(90deg, hsl(170 100% 39%), hsl(160 55% 40%)) 1;
+  }
+
+  @keyframes glow-pulse {
+    0%, 100% { opacity: 0.4; transform: scale(1); }
+    50% { opacity: 0.7; transform: scale(1.05); }
+  }
+
+  .animate-glow {
+    animation: glow-pulse 4s ease-in-out infinite;
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-6px); }
+  }
+
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+}
