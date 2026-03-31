@@ -34,12 +34,8 @@ const FrameworkSection = () => {
   return (
     <section id="framework" ref={ref} className="section-padding section-alt">
       <div className="max-w-6xl mx-auto space-y-20">
-        <div className="fade-in-up text-center max-w-2xl mx-auto space-y-4">
-          <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-foreground">
-            A Common Language for{" "}
-            <span className="highlight-band">Better Decisions</span>
-          </h2>
-        </div>
+
+
 
         <div className="fade-in-up grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {dimensions.map((dim, i) => (
@@ -57,10 +53,8 @@ const FrameworkSection = () => {
           ))}
         </div>
 
-        <p className="fade-in-up text-center text-muted-foreground max-w-xl mx-auto leading-relaxed">
-          This enables comparability, alignment and better decisions across the
-          ecosystem.
-        </p>
+
+
       </div>
     </section>
   );

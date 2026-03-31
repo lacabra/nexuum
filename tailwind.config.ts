@@ -59,6 +59,7 @@ export default {
         },
         navy: {
           DEFAULT: "hsl(var(--navy))",
+          light: "hsl(var(--navy-light))",
           foreground: "hsl(var(--navy-foreground))",
         },
         "section-alt": "hsl(var(--section-alt))",
